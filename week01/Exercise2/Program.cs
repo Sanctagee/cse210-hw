@@ -6,9 +6,11 @@ class Program
     {
         // Ask for grade percentage
         Console.Write("Enter your grade percentage: ");
-        int gradePercentage = int.Parse(Console.ReadLine());
+        string answer = Console.ReadLine();
+        int gradePercentage = int.Parse(answer);
 
-        string letter = ""; // Variable to hold the letter grade
+        string letter = ""; // Variable to hold the letter grade;
+        string sign = ""; // Variable for + or -     
 
         // Determine letter grade
         if (gradePercentage >= 90)
@@ -33,10 +35,24 @@ class Program
         }
 
 
-        // Print letter grade
-        Console.WriteLine($"Your letter grade is: {letter}");
+        // Determine sign (+, -, or none)
+        int lastDigit = gradePercentage % 10; // Get the last digit
+        if (letter != "F") // No + or - for F
+        {
+            if (lastDigit >= 7 && letter != "A") // No A+
+            {
+                sign = "+";
+            }
+            else if (lastDigit < 3 && letter != "F") // No F-
+            {
+                sign = "-";
+            }
+        }
 
-        // Check if user passed
+        // Print final grade
+        Console.WriteLine($"Your letter grade is: {letter}{sign}");
+
+        // Pass/fail message
         if (gradePercentage >= 70)
         {
             Console.WriteLine("Congratulations! You passed the course.");
