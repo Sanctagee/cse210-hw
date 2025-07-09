@@ -28,10 +28,17 @@ class Program
     }
 
     // Prompts and returns user's favorite number
+    // Additional enhancement for number validation
     static int PromptUserNumber()
     {
-        Console.Write("Please enter your favorite number: ");
-        return int.Parse(Console.ReadLine());
+        int number;
+        while (true)
+        {
+            Console.Write("Please enter your favorite number: ");
+            if (int.TryParse(Console.ReadLine(), out number))
+                return number;
+            Console.WriteLine("Invalid input. Please enter an integer.");
+        }
     }
 
     // Squares a given number
