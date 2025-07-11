@@ -1,0 +1,6 @@
+7/11/2025|happy|What was the best part of my day?|meeting my crush at the office today
+7/11/2025|indifferent|If I had one thing I could do over today, what would it be?|To give more attention to the principle of abstraction in C#
+7/11/2025|same|If I had one thing I could do over today, what would it be?|I already answered that
+7/11/2025|joyful|What made me laugh today?|A funny story told by Mary; my student when I finished teaching her
+7/11/2025|fufilled|What am I grateful for today?|Being hale and hearty
+7/11/2025|happy|What challenge did I overcome today?|Challenge of burrowing into the realms of analysis in Power BI
