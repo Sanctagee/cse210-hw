@@ -1,0 +1,58 @@
+[
+  {
+    "book": "John",
+    "chapter": 3,
+    "verse": 16,
+    "endVerse": 0,
+    "text": "For God so loved the world that he gave his one and only Son..."
+  },
+  {
+    "book": "Psalm",
+    "chapter": 23,
+    "verse": 1,
+    "endVerse": 0,
+    "text": "The LORD is my shepherd I shall not want..."
+  },
+  {
+  "book": "Galatians",
+  "chapter": 4,
+  "verse": 4,
+  "endVerse": 0,
+  "text": "Rejoice! I repeat, rejoice in the Lord..."
+  },
+  {
+    "book": "Proverbs",
+    "chapter": 3,
+    "verse": 5,
+    "endVerse": 6,
+    "text": "Trust in the LORD with all your heart and lean not on your own understanding..."
+  },
+  {
+    "book": "Matthew",
+    "chapter": 7,
+    "verse": 7,
+    "endVerse": 0,
+    "text": "Ask and it shall be given to you, seek and you shall find, knock and the door shall be opened unto you..."
+  },
+  {
+  "book": "Matthew",
+  "chapter": 11,
+  "verse": 28,
+  "endVerse": 0,
+  "text": "Come to me, all who labour and are overburdened, I will give you rest..."
+  },
+  {
+    "book": "Proverbs",
+    "chapter": 22,
+    "verse": 6,
+    "endVerse": 6,
+    "text": "Teach a child how he should live, and he will remember it all his life..."
+  },
+  {
+    "book": "John",
+    "chapter": 11,
+    "verse": 35,
+    "endVerse": 0,
+    "text": "Jesus Wept"
+  }
+]
