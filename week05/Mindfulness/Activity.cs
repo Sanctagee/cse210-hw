@@ -1,12 +1,13 @@
 // Base Activity Class (Activity.cs)
+using System;
+using System.Threading;
+
 public abstract class Activity
 {
     protected string _name;
     protected string _description;
     protected int _duration;
     protected static int _activityCount;
-    
-    public static int GetActivityCount() => _activityCount;
 
     public Activity(string name, string description)
     {
@@ -14,22 +15,32 @@ public abstract class Activity
         _description = description;
     }
 
+    public static int GetActivityCount()
+    {
+        return _activityCount;
+    }
     protected void DisplayStartMessage()
     {
         Console.Clear();
-        Console.WriteLine($"Welcome to the {_name} Activity!");
+        Console.WriteLine($"Welcome to the {_name}!");
         Console.WriteLine($"\n{_description}");
-        Console.Write("\nEnter duration (seconds): ");
-        _duration = int.Parse(Console.ReadLine());
-        Console.WriteLine("\nPrepare to begin...");
+        
+        while (true)
+        {
+            Console.Write("\nHow long (in seconds) would you like your session? ");
+            if (int.TryParse(Console.ReadLine(), out _duration) && _duration > 0)
+                break;
+            Console.WriteLine("Please enter a positive number.");
+        }
+
+        Console.WriteLine("\nGet ready...");
         ShowSpinner(3);
     }
 
     protected void DisplayEndMessage()
     {
-        Console.WriteLine("\nGood job!");
-        ShowSpinner(2);
-        Console.WriteLine($"\nYou've completed {_duration} seconds of {_name} Activity");
+        Console.WriteLine("\nGreat job!");
+        Console.WriteLine($"You've completed {_duration} seconds of the {_name}.");
         ShowSpinner(3);
         _activityCount++;
     }
@@ -39,7 +50,7 @@ public abstract class Activity
         DateTime endTime = DateTime.Now.AddSeconds(seconds);
         string[] spinner = { "|", "/", "-", "\\" };
         int index = 0;
-        
+
         while (DateTime.Now < endTime)
         {
             Console.Write(spinner[index]);

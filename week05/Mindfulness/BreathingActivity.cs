@@ -8,10 +8,9 @@
 public class BreathingActivity : Activity
 {
     public BreathingActivity() : base(
-        "Breathing",
-        "This activity will help you relax through paced breathing. Focus on your breath."
-    )
-    { }
+        "Breathing Activity",
+        "This activity will help you relax by guiding you through slow breathing."
+    ) { }
 
     public override void Run()
     {
@@ -22,10 +21,8 @@ public class BreathingActivity : Activity
         {
             Console.Write("\nBreathe in... ");
             ShowCountdown(4);
-
             Console.Write("\nBreathe out... ");
             ShowCountdown(6);
-            Console.WriteLine();
         }
 
         DisplayEndMessage();

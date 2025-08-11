@@ -1,35 +1,44 @@
-// Listing Activity (ListingActivity.cs)
+
+using System;
+using System.Collections.Generic;
+
 public class ListingActivity : Activity
 {
-    private readonly List<string> _prompts = new() { /* prompts */ };
-    private int _itemCount;
+    private readonly List<string> _prompts = new()
+    {
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this month?",
+        "Who are some of your personal heroes?"
+    };
 
     public ListingActivity() : base(
-        "Listing",
-        "Reflect on good things in your life by listing items in a specific area."
+        "Listing Activity",
+        "This activity helps you reflect on positive aspects by listing items."
     ) { }
 
     public override void Run()
     {
         DisplayStartMessage();
-        Console.WriteLine($"\nPrompt: {GetRandomPrompt()}");
-        Console.Write("\nStarting in: ");
+        
+        Random rand = new();
+        Console.WriteLine($"\nPrompt: {_prompts[rand.Next(_prompts.Count)]}");
+        Console.Write("Starting in ");
         ShowCountdown(5);
-        
+
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
-        _itemCount = 0;
-        
-        Console.WriteLine("\nStart listing:");
+        int itemCount = 0;
+
+        Console.WriteLine("\nBegin listing:");
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
             Console.ReadLine();
-            _itemCount++;
+            itemCount++;
         }
-        
-        Console.WriteLine($"\nYou listed {_itemCount} items!");
+
+        Console.WriteLine($"\nYou listed {itemCount} items!");
         DisplayEndMessage();
     }
-
-    private string GetRandomPrompt() => _prompts[new Random().Next(_prompts.Count)];
 }
